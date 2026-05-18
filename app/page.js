@@ -6,14 +6,10 @@ import { Heart, Sparkles, LockKeyhole, ArrowRight, Stars } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const RESPONSE_WEBHOOK_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const RESPONSE_WEBHOOK_URL =
+  "https://script.google.com/macros/s/AKfycbw4FFf0cNtyy_hacICDTSg4VCAjyZsDg5ofckuVdp_7hbRxcIpAPJov6tk1IdljyTyi/exec";
 
 async function sendResponseUpdate(payload) {
-  if (!RESPONSE_WEBHOOK_URL || RESPONSE_WEBHOOK_URL.includes("PASTE_YOUR")) {
-    console.log("Response update not sent yet. Add your Google Apps Script URL first.", payload);
-    return;
-  }
-
   try {
     await fetch(RESPONSE_WEBHOOK_URL, {
       method: "POST",
@@ -47,7 +43,7 @@ function FloatingBackground() {
       {floatingItems.map((item, index) => (
         <motion.div
           key={`${item.emoji}-${index}`}
-          className="absolute bottom-[-80px] text-3xl md:text-4xl opacity-80"
+          className="absolute bottom-[-80px] text-3xl opacity-80 md:text-4xl"
           style={{ left: item.left }}
           animate={{
             y: [0, -900],
@@ -100,9 +96,11 @@ function LoginCard({ username, setUsername, onLogin, error }) {
             <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/20 px-3 py-1 text-sm font-medium text-rose-900">
               <Sparkles className="h-4 w-4" /> A little surprise awaits
             </p>
+
             <h1 className="mt-4 text-3xl font-bold tracking-tight text-rose-950 md:text-4xl">
               Welcome, beautiful soul
             </h1>
+
             <p className="mt-3 text-sm leading-6 text-rose-900/90 md:text-base">
               Enter your username to unlock something made with a tiny bit of courage and a lot of heart.
             </p>
@@ -119,12 +117,14 @@ function LoginCard({ username, setUsername, onLogin, error }) {
               <label className="mb-2 block text-sm font-semibold text-rose-950">
                 Username
               </label>
+
               <input
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
                 placeholder="Type your username..."
-                className="w-full rounded-2xl border border-white/50 bg-white/55 px-4 py-3 text-rose-950 outline-none placeholder:text-rose-700/60 shadow-inner transition focus:border-rose-400 focus:bg-white/75 focus:ring-4 focus:ring-rose-200/60"
+                className="w-full rounded-2xl border border-white/50 bg-white/55 px-4 py-3 text-rose-950 shadow-inner outline-none transition placeholder:text-rose-700/60 focus:border-rose-400 focus:bg-white/75 focus:ring-4 focus:ring-rose-200/60"
               />
+
               {error && (
                 <motion.p
                   initial={{ opacity: 0, y: -4 }}
@@ -232,6 +232,7 @@ function SurpriseScreen({ username, onBack }) {
             <Button
               onClick={() => {
                 setAnswer("yes");
+
                 sendResponseUpdate({
                   username: greeting,
                   answer: "yes",
@@ -261,9 +262,11 @@ function SurpriseScreen({ username, onBack }) {
             className="mt-6 rounded-3xl bg-white/35 p-5 text-rose-950 shadow-xl"
           >
             <div className="text-5xl">🥹💗</div>
+
             <p className="mt-3 text-xl font-extrabold">
               You just made me the happiest person.
             </p>
+
             <p className="mt-2 text-sm md:text-base">
               I promise this little website will always remember this moment.
             </p>
@@ -275,7 +278,9 @@ function SurpriseScreen({ username, onBack }) {
             className="mt-6 rounded-3xl bg-white/35 p-5 text-rose-950 shadow-xl"
           >
             <div className="text-5xl">🥲😂</div>
+
             <p className="mt-3 text-xl font-extrabold">{currentNoMessage}</p>
+
             <p className="mt-2 text-sm md:text-base">
               I promise I’m just being playful here — but I still want to know your reason.
             </p>
@@ -290,7 +295,7 @@ function SurpriseScreen({ username, onBack }) {
                   value={reason}
                   onChange={(event) => setReason(event.target.value)}
                   placeholder="Type your reason here..."
-                  className="min-h-[110px] w-full rounded-2xl border border-white/60 bg-white/60 px-4 py-3 text-rose-950 outline-none placeholder:text-rose-700/60 shadow-inner transition focus:border-rose-400 focus:bg-white/80 focus:ring-4 focus:ring-rose-200/60"
+                  className="min-h-[110px] w-full rounded-2xl border border-white/60 bg-white/60 px-4 py-3 text-rose-950 shadow-inner outline-none transition placeholder:text-rose-700/60 focus:border-rose-400 focus:bg-white/80 focus:ring-4 focus:ring-rose-200/60"
                 />
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -299,6 +304,7 @@ function SurpriseScreen({ username, onBack }) {
                       if (reason.trim()) {
                         const cleanReason = reason.trim();
                         setSavedReason(cleanReason);
+
                         sendResponseUpdate({
                           username: greeting,
                           answer: "no",
@@ -314,10 +320,13 @@ function SurpriseScreen({ username, onBack }) {
                   <Button
                     onClick={() => {
                       setAnswer("yes");
+
                       sendResponseUpdate({
                         username: greeting,
                         answer: "yes_after_initial_no",
-                        reason: reason.trim() || "Clicked yes before submitting reason",
+                        reason:
+                          reason.trim() ||
+                          "Clicked yes before submitting reason",
                       });
                     }}
                     variant="outline"
@@ -329,8 +338,13 @@ function SurpriseScreen({ username, onBack }) {
               </div>
             ) : (
               <div className="mt-5 rounded-3xl bg-white/45 p-4">
-                <p className="text-sm font-semibold text-rose-900">Your reason:</p>
-                <p className="mt-2 text-base italic text-rose-950">“{savedReason}”</p>
+                <p className="text-sm font-semibold text-rose-900">
+                  Your reason:
+                </p>
+
+                <p className="mt-2 text-base italic text-rose-950">
+                  “{savedReason}”
+                </p>
 
                 <p className="mt-4 text-base font-bold text-rose-950">
                   {afterReasonNoCount >= 3
@@ -345,10 +359,13 @@ function SurpriseScreen({ username, onBack }) {
                         key={label}
                         onClick={() => {
                           setAnswer("yes");
+
                           sendResponseUpdate({
                             username: greeting,
                             answer: "yes_after_no",
-                            reason: savedReason || "Changed to yes after saying no",
+                            reason:
+                              savedReason ||
+                              "Changed to yes after saying no",
                           });
                         }}
                         className="h-12 rounded-2xl bg-rose-700 px-6 font-bold text-white hover:bg-rose-800"
@@ -362,10 +379,13 @@ function SurpriseScreen({ username, onBack }) {
                     <Button
                       onClick={() => {
                         setAnswer("yes");
+
                         sendResponseUpdate({
                           username: greeting,
                           answer: "yes_after_no",
-                          reason: savedReason || "Changed to yes after saying no",
+                          reason:
+                            savedReason ||
+                            "Changed to yes after saying no",
                         });
                       }}
                       className="h-12 rounded-2xl bg-rose-700 px-6 font-bold text-white hover:bg-rose-800"
