@@ -213,7 +213,8 @@ function SurpriseScreen({ username, onBack }) {
           className="mx-auto mt-5 max-w-2xl text-base leading-8 text-rose-950/85 md:text-lg"
         >
           If you noticed this page or already logged in, I just want to say that I have a crush on you.
-          I’m always waiting for your posts... ehh, feed ke? Ehh, story bahh 😅 I always follow up with your stories.
+          Ouhh  and good morning mimiee harap la u buka pagi waktu u dah sampai ke takpun bangun ke hehe i belum sleep lagi hehe,and nak yapping jugaaa hehe sleep well yah semalam ni kalau i tak bangun lagi maksudnya sleep lagi HAHAHAHAHAHAHAH tachod nak call
+            
         </motion.p>
       </div>
 
