@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const RESPONSE_WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbw4FFf0cNtyy_hacICDTSg4VCAjyZsDg5ofckuVdp_7hbRxcIpAPJov6tk1IdljyTyi/exec";
+  "https://script.google.com/macros/s/AKfycbzqK57mJaNc-ye8yvUX7E3RA61BiyGbPr-Fw951bLkMpNnAu2LWKSXM6vfh98ragX2YYg/exec";
 
 async function sendResponseUpdate(payload) {
   try {
@@ -213,7 +213,7 @@ function SurpriseScreen({ username, onBack }) {
           className="mx-auto mt-5 max-w-2xl text-base leading-8 text-rose-950/85 md:text-lg"
         >
           If you noticed this page or already logged in, I just want to say that I have a crush on you.
-          Ouhh  and good morning mimiee harap la u buka pagi waktu u dah sampai ke takpun bangun ke hehe i belum sleep lagi hehe,and nak yapping jugaaa hehe sleep well yah semalam ni kalau i tak bangun lagi maksudnya sleep lagi HAHAHAHAHAHAHAH tachod nak call
+          Comel ka atau cringee, ni lah yang i nak bagi u tuu, jangan ketawa sanaa i share dengan member i dia cakap cringe joo . Thank you very much yah sebab temankan i main game walaupun esok you kerja , and teroff call semalam sebb nak pasang casing fon and kawan i ajak men go kart di roblox tapi i tak call balik takut u marah i nakk  sleep well yahh eesok malam kita sleep call yahhh hehe goodnight busyukkk
             
         </motion.p>
       </div>
