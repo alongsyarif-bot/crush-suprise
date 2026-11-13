@@ -213,8 +213,11 @@ function SurpriseScreen({ username, onBack }) {
           className="mx-auto mt-5 max-w-2xl text-base leading-8 text-rose-950/85 md:text-lg"
         >
           If you noticed this page or already logged in, I just want to say that I have a crush on you.
-          Comel ka atau cringee, ni lah yang i nak bagi u tuu, jangan ketawa sanaa i share dengan member i dia cakap cringe joo . Thank you very much yah sebab temankan i main game walaupun esok you kerja , and teroff call semalam sebb nak pasang casing fon and kawan i ajak men go kart di roblox tapi i tak call balik takut u marah i nakk  sleep well yahh eesok malam kita sleep call yahhh hehe goodnight busyukkk
-            
+Comel ka atau cringe ni HAHAHA 😭 Ni lah benda yang I nak bagi you tuu. Jangan ketawa tauuu, I dah share dengan member I and dia cakap cringe joo 😭
+
+Anyway, thank you very much yah sebab temankan I main game malam ni, even though esok you kerja. And sorry sebab ter-off call semalam, I nak pasang casing phone kejap then kawan I ajak main go-kart dekat Roblox HAHAHA. Tapi I tak call balik sebab takut you dah tidur or marah I 🥹
+
+Sleep well yahh, jangan tidur lambat sangat. Esok malam kita sleep call lagi okayyy? Hehe. Goodnight, busyukkk! 🤍            
         </motion.p>
       </div>
 
