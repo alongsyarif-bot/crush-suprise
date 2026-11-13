@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const RESPONSE_WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbzqK57mJaNc-ye8yvUX7E3RA61BiyGbPr-Fw951bLkMpNnAu2LWKSXM6vfh98ragX2YYg/exec";
+  "https://script.google.com/macros/s/AKfycbxcNmNbNsfxnlyxfaVzhhNPcuxOfBe-kwoN_OYb0ghOpll8IDhQkeOk6PHU964mqU-P/exec";
 
 async function sendResponseUpdate(payload) {
   try {
