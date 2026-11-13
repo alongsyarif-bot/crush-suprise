@@ -428,7 +428,7 @@ export default function CrushAnimationWebsite() {
   const [error, setError] = useState(false);
 
   const handleLogin = () => {
-    const allowedUsernames = ["mshaelya", "misha"];
+    const allowedUsernames = ["mimie", "nurshahmimie"];
     const normalizedUsername = username.trim().toLowerCase();
 
     if (!allowedUsernames.includes(normalizedUsername)) {
