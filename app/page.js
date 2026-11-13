@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useMemo, useState } from "react";
@@ -7,14 +8,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const RESPONSE_WEBHOOK_URL =
- "https://script.google.com/macros/s/AKfycbx7joMgdG7-HOVeihEP7n529MOodHx1iJb9s6KPIz6_vCHLFCu_fqCI0Ki--DjBad82Bw/exec"
+  "https://script.google.com/macros/s/AKfycbx7joMgdG7-HOVeihEP7n529MOodHx1iJb9s6KPIz6_vCHLFCu_fqCI0Ki--DjBad82Bw/exec";
+
 async function sendResponseUpdate(payload) {
   try {
     await fetch(RESPONSE_WEBHOOK_URL, {
       method: "POST",
       mode: "no-cors",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charset=UTF-8",
       },
       body: JSON.stringify({
         ...payload,
@@ -209,14 +211,15 @@ function SurpriseScreen({ username, onBack }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.42 }}
-          className="mx-auto mt-5 max-w-2xl text-base leading-8 text-rose-950/85 md:text-lg"
+          className="mx-auto mt-5 max-w-2xl whitespace-pre-line text-base leading-8 text-rose-950/85 md:text-lg"
         >
-          If you noticed this page or already logged in, I just want to say that I have a crush on you.
+          {`If you noticed this page or already logged in, I just want to say that I have a crush on you.
+
 Comel ka atau cringe ni HAHAHA 😭 Ni lah benda yang I nak bagi you tuu. Jangan ketawa tauuu, I dah share dengan member I and dia cakap cringe joo 😭
 
 Anyway, thank you very much yah sebab temankan I main game malam ni, even though esok you kerja. And sorry sebab ter-off call semalam, I nak pasang casing phone kejap then kawan I ajak main go-kart dekat Roblox HAHAHA. Tapi I tak call balik sebab takut you dah tidur or marah I 🥹
 
-Sleep well yahh, jangan tidur lambat sangat. Esok malam kita sleep call lagi okayyy? Hehe. Goodnight, busyukkk! 🤍            
+Sleep well yahh, jangan tidur lambat sangat. Esok malam kita sleep call lagi okayyy? Hehe. Goodnight, busyukkk! 🤍`}
         </motion.p>
       </div>
 
